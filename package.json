@@ -13,6 +13,7 @@
   "dependencies": {
     "@babel/core": "^7.12.9",
     "@storybook/react": "^6.1.9",
+    "@types/classnames": "^2.2.11",
     "autoprefixer": "^9.8.6",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.2.2",

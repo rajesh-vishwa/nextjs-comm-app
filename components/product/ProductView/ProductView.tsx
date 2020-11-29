@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import { IProduct } from "../../../models/product";
 import { Container } from "../../ui";
 import cn from "classnames";
