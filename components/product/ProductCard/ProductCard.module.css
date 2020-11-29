@@ -1,0 +1,37 @@
+.cardContainer {
+  border: 2px solid lightgray;
+  padding-top: 10px;
+}
+
+.imageContainer {
+  overflow: hidden;
+}
+
+.imageContainer div {
+  min-width: 100%;
+}
+
+.image {
+  object-fit: cover;
+  transform: scale(1.2);
+}
+
+.cardDetails {
+  padding-left: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.productTitle {
+  font-size: 1.5rem;
+  letter-spacing: 0.4px;
+  font-weight: bold;
+}
+
+.productPrice {
+  font-size: 1rem;
+  letter-spacing: 0.4px;
+  font-weight: 600;
+  padding-top: 10px;
+  color: blue;
+}
