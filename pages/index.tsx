@@ -2,10 +2,10 @@ import Link from "next/link";
 
 const IndexPage = () => (
   <>
-    <h1>Hello Next.js 👋</h1>
+    <h1>👋</h1>
     <p>
-      <Link href="/about">
-        <a>About</a>
+      <Link href="/product-list">
+        <a>Product Lisitng</a>
       </Link>
     </p>
   </>

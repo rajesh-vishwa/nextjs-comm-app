@@ -2,7 +2,7 @@ import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import Grid from "./Grid";
 
-storiesOf("Loading", module).add("default", () => {
+storiesOf("Grid", module).add("default", () => {
   return (
     <Grid>
       {["A", "B", "C", "E", "F"].map((el) => (
