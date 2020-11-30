@@ -2,6 +2,7 @@ import { IProduct } from "../../models/product";
 import productData from "../../data.json";
 import { Grid } from "../../components/ui";
 import ProductCard from "../../components/product/ProductCard/ProductCard";
+import Nav from "../../components/ui/Nav/Nav";
 
 type Props = {
   products: IProduct[];
@@ -10,7 +11,8 @@ type Props = {
 function ProductList({ products }: Props) {
   return (
     <div className="px-4 py-4">
-      <h1>Products List</h1>
+      <Nav />
+
       <Grid>
         {products.map((product) => (
           <ProductCard
@@ -19,12 +21,6 @@ function ProductList({ products }: Props) {
             imgWidth={320}
             imgHeight={320}
           />
-          //   <li key={product.id}>
-          //     {product.id} {product.name}
-          //     <Link href="/product/[id]" as={"/product/" + product.id}>
-          //       <a>Details</a>
-          //     </Link>
-          //   </li>
         ))}
       </Grid>
     </div>

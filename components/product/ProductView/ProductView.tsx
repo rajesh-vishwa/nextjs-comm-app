@@ -1,10 +1,12 @@
 import { FC } from "react";
+import Link from "next/link";
 import { IProduct } from "../../../models/product";
-import { Container } from "../../ui";
+import { Button, Container } from "../../ui";
 import cn from "classnames";
 import Image from "next/image";
 import s from "./ProductView.module.css";
-import Swatch from "../Swatch/Swatch";
+import Color from "../../ui/Color/Color";
+import Size from "../../ui/Size/Size";
 
 interface Props {
   className?: string;
@@ -48,25 +50,18 @@ const ProductView: FC<Props> = ({ product }) => {
             <div className="px-6 py-2 pb-4 bg-primary text-primary font-bold inline-block tracking-wide">
               ${product.price}
             </div>
-            <div className="px-6">COLOR</div>
-            <div className="flex flex-row py-6 px-6">
-              {["yellow", "red", "blue", "gray"].map((color, ids) => (
-                <div className="px-2" key={ids}>
-                  <Swatch variant="color" color={color} />
-                </div>
-              ))}
-            </div>
-            <div className="px-6">SIZE</div>
-            <div className="flex flex-row py-6 px-6">
-              {["S", "M", "L"].map((size, ids) => (
-                <div className="px-2" key={ids}>
-                  <Swatch label={size} />
-                </div>
-              ))}
-            </div>
+
+            <Color />
+            <Size />
           </section>
           <div className="pb-14 break-words w-full max-w-xl px-6">
             {product.description}
+          </div>
+          <div className="grid grid-cols-2 gap-2 px-6">
+            <Button text="Add To Card" onClick={(e) => {}} />
+            <Link href="/product-list">
+              <a>Back</a>
+            </Link>
           </div>
         </div>
       </div>

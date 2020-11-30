@@ -5,10 +5,8 @@ import Grid from "./Grid";
 storiesOf("Grid", module).add("default", () => {
   return (
     <Grid>
-      {["A", "B", "C", "E", "F"].map((el) => (
-        <div key={el} className="px-2 py-2">
-          {el}
-        </div>
+      {["Item-A", "Item-B", "Item-C", "Item-E", "Item-F"].map((el) => (
+        <div key={el}>{el}</div>
       ))}
     </Grid>
   );

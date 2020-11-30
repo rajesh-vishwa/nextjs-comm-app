@@ -2,10 +2,8 @@ import { useRouter } from "next/router";
 import { IProduct } from "../../models/product";
 import productData from "../../data.json";
 import ProductView from "../../components/product/ProductView/ProductView";
-
-interface IProductProps {
-  product: IProduct;
-}
+import { LoadingDots } from "../../components/ui";
+import Nav from "../../components/ui/Nav/Nav";
 
 const ProductDetail = () => {
   const router = useRouter();
@@ -14,23 +12,22 @@ const ProductDetail = () => {
     (p) => String(p.id) === router.query.id
   );
 
-  if (!product) return <>loading...</>;
+  if (!product)
+    return (
+      <>
+        <LoadingDots />
+      </>
+    );
 
   const p: IProduct = {
     ...product,
   };
-  return <ProductView product={p} />;
+  return (
+    <>
+      <Nav />
+      <ProductView product={p} />
+    </>
+  );
 };
 
-// export const getStaticProps: GetStaticProps = async ({ params }) => {
-//   console.log("productId ", params?.id);
-//   return {
-//     props: {
-//       product: {
-//         id: 1,
-//         name: "test product " + params?.id,
-//       },
-//     },
-//   };
-// };
 export default ProductDetail;

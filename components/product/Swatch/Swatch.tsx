@@ -1,5 +1,5 @@
 import cn from "classnames";
-import { FC } from "react";
+import * as React from "react";
 
 interface Props {
   label?: string;
@@ -7,12 +7,16 @@ interface Props {
   color?: string;
 }
 
-const Swatch: FC<Props> = ({ color = "white", label, variant = "size" }) => {
+const Swatch: React.FC<Props> = ({
+  color = "white",
+  label,
+  variant = "size",
+}) => {
   //const border = variant === "size" ? "2x solid black" : "0x solid black";
   return (
     <div
       className={cn("rounded-full h-12 w-12 flex items-center justify-center", {
-        "border-current": label,
+        "border-2 border-black": label,
       })}
       style={{ backgroundColor: color }}
     >
