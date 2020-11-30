@@ -58,7 +58,7 @@ const ProductView: FC<Props> = ({ product }) => {
             {product.description}
           </div>
           <div className="grid grid-cols-2 gap-2 px-6">
-            <Button text="Add To Card" onClick={(e) => {}} />
+            <Button text="Add To Card" onClick={() => {}} />
             <Link href="/product-list">
               <a>Back</a>
             </Link>
