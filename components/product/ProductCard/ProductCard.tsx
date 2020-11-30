@@ -1,6 +1,5 @@
 import React from "react";
-import Link from "next/link";
-import Image from "next/image";
+
 import s from "./ProductCard.module.css";
 import { IProduct } from "../../../models/product";
 import CardDetail from "./CardDetail/CardDetail";
@@ -13,11 +12,10 @@ interface Props {
 
 const ProductCard: React.FC<Props> = ({ product, imgWidth, imgHeight }) => {
   return (
-    <Link href={`/product/${product.id}`}>
-      <div className={s.cardContainer}>
+    <>
+      <div className={"pt-4 border-2 border-gray-400"}>
         <div className={s.imageContainer}>
-          <Image
-            quality="85"
+          <img
             src={product.image}
             alt={product.name}
             className={s.image}
@@ -25,10 +23,9 @@ const ProductCard: React.FC<Props> = ({ product, imgWidth, imgHeight }) => {
             height={imgHeight}
           />
         </div>
-
         <CardDetail name={product.name} price={product.price} />
       </div>
-    </Link>
+    </>
   );
 };
 

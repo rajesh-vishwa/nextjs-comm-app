@@ -29,6 +29,18 @@ table populated in the Storybook Info Addon.
       ],
     });
 
+    config.module.rules.push({
+      test: /\.(png|jpe?g|gif)$/i,
+      use: [
+        {
+          loader: "file-loader",
+        },
+      ],
+    });
+    // config.module.rules.push({
+    //   test: /\.css$/i,
+    //   use: ["style-loader", "css-loader"],
+    // });
     config.resolve.extensions.push(".ts", ".tsx");
 
     return config;

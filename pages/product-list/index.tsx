@@ -3,6 +3,7 @@ import productData from "../../data.json";
 import { Grid } from "../../components/ui";
 import ProductCard from "../../components/product/ProductCard/ProductCard";
 import Nav from "../../components/ui/Nav/Nav";
+import Link from "next/link";
 
 type Props = {
   products: IProduct[];
@@ -15,12 +16,11 @@ function ProductList({ products }: Props) {
 
       <Grid>
         {products.map((product) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            imgWidth={320}
-            imgHeight={320}
-          />
+          <Link key={product.id} href={`/product/${product.id}`}>
+            <a>
+              <ProductCard product={product} imgWidth={320} imgHeight={320} />
+            </a>
+          </Link>
         ))}
       </Grid>
     </div>
