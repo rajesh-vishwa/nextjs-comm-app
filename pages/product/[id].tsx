@@ -3,7 +3,9 @@ import { IProduct } from "../../models/product";
 import productData from "../../data.json";
 import ProductView from "../../components/product/ProductView/ProductView";
 import { LoadingDots } from "../../components/ui";
-import Nav from "../../components/ui/Nav/Nav";
+
+import React from "react";
+import Layout from "../../components/ui/Layout/Layout";
 
 const ProductDetail = () => {
   const router = useRouter();
@@ -23,10 +25,9 @@ const ProductDetail = () => {
     ...product,
   };
   return (
-    <>
-      <Nav />
+    <Layout>
       <ProductView product={p} />
-    </>
+    </Layout>
   );
 };
 
